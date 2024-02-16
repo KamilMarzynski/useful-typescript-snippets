@@ -1,8 +1,9 @@
-type Color = ColorString | ColorRGB;
 type ColorString = 'red' | 'blue' | 'yellow' | 'purple';
 type ColorRGB = [red: number, green: number, blue: number];
 
-type Theme = Record<string, Color>;
+type Color = ColorString | ColorRGB;
+
+type Theme = Record<'primary' | 'secondary' | 'tertiary', Color>;
 
 const theme: Theme = {
 	primary: 'red',
@@ -10,10 +11,7 @@ const theme: Theme = {
 	tertiary: 'purpel' // <- this shows error, typo
 }
 
-const [r, g, b] = theme.secondary; // <- as of ts version 5.0.0 this is not showing error, but it always annotates type Color and r, g, b as string | number
-let primary = theme.primary // Color
-let secondary = theme.secondary // Color
-let tertiary = theme.tertiary // Color
+const secondary = theme.secondary[3] // does not show error, it might be string or array so it's ok
 
 const theme2 = {
 	primary: 'red',
@@ -21,6 +19,4 @@ const theme2 = {
 	tertiary: 'purpel' // <- this shows error, typo
 } satisfies Theme;
 
-const primary2 = theme2.primary; // 'red'
-const secondary2 = theme2.secondary; // [number, number, number]
-const tertiary2 = theme2.tertiary; // 'purpel'
+const secondary2 = theme2.secondary[3] // shows error, its [number, number, number] so have no index 3
