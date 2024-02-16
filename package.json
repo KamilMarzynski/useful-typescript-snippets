@@ -1,0 +1,14 @@
+{
+  "name": "useful-typescript-snippets",
+  "version": "1.0.0",
+  "description": "My (growing) collection of useful TS types and tricks. Kept here, maybe sometime, someday it will help someone else than only me",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.3.3"
+  }
+}
