@@ -1,8 +1,11 @@
-type Size = 'small' | 'medium' | 'large'
-type Color = 'primary' | 'seconadary'
+import "index";
+
+type Size = "small" | "medium" | "large";
+type Color = "primary" | "seconadary";
 type Style = `${Size}-${Color}`;
 
 function applyStyle(style: Style) {}
 
-applyStyle('small-primary') // OK
-applyStyle('midim-secondary') // Error
+applyStyle("small-primary"); // OK
+applyStyle("midim-secondary"); // Error
+
