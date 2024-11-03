@@ -1,7 +1,7 @@
 import "index";
 
 type Curried<F> = F extends (...args: infer A) => infer R
-  ? // very important here! arguments of function in typescrypt are typles.
+  ? // very important here! arguments of function in TS are tuples.
     // A is tupple of function arguments and here we check if there are any arguments left infering first argument and using spread operator to have rest of them stored in L
     A extends [infer F, ...infer L]
     ? L extends []
